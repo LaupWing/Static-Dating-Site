@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./signup.js" defer></script>
+</head>
+<body>
+    <main>
+        <h2>Signup<span> 1/4</span></h2>
+        <form method="POST" action="/signup" enctype="multipart/form-data">
+            <div class="field visible">
+                <input type="email" placeholder="Email" name="email" />
+                <input type="password" placeholder="Password" name="password" />
+                <input type="password" placeholder="Confirm password" name="passwordCheck" />
+            </div>
+            <div class="field"> 
+                <input type="text" placeholder="Your Name" name="name" />
+                <div class="gender">
+                    <input type="radio" id="female" name="gender" value="female" />
+                    <label for="female">
+                        <p>  Female</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 529">
+                            <path d="M257,9h26c5.09.73,10.19,1.38,15.26,2.21,93,15.17,158.62,101.1,146.24,194.71-9.57,72.35-50.77,120.91-119.31,146-7.44,2.72-15.28,4.32-22.85,6.42V393c15.83,0,31.3,0,46.77,0,18.48,0,32.82,13.9,32.88,31.78.07,18.05-14,32.08-32.42,32.21-14.16.09-28.32,0-42.48,0-1.6,0-3.2.15-5.1.24,0,11.06.11,21.71,0,32.35a31.63,31.63,0,0,1-21.46,29.58c-1.52.54-3,1.2-4.51,1.81H264c-3.75-1.68-7.77-2.93-11.19-5.12-9.68-6.2-14.61-15.3-14.78-26.79-.15-10.59,0-21.18,0-32.09-16.12,0-31.59,0-47.06,0-18.58-.06-32.86-13.84-32.95-31.71-.1-18.2,14.15-32.22,32.89-32.29,14-.05,28,0,42,0,1.61,0,3.21-.13,4.85-.21V358.1c-1.55-.39-2.83-.76-4.13-1-77.71-16.16-135.5-83.73-139.44-163a175.83,175.83,0,0,1,131-179.12C235.6,12.2,246.39,10.94,257,9Zm12.66,288c61.2.34,112-49.68,112.34-110.54.31-62.11-49.09-113.1-109.91-113.45C209.27,72.65,158.35,121.89,158,183.29,157.68,246.35,207.07,296.64,269.66,297Z">
+                            </path>
+                        </svg>
+                    </label>
+                    <input type="radio" id="male" name="gender" value="male" />
+                    <label for="male">
+                        <p>  Male</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 529">
+                            <path d="M525.57,146.69c-.15-12.65-.45-25.3-.53-37.95-.15-24.64-.16-49.29-.3-73.94-.08-13.2-9.33-23.6-21.42-23.63q-62.2-.18-124.41,0c-11.23,0-20.56,9.42-21,20.69-.17,4.33-.09,8.66-.09,13,0,14.77,9.24,24.09,23.92,24.11,13.83,0,27.65,0,41.47,0,1.4,0,2.91-.43,4.55.7-2.09,2.39-4,4.65-6,6.81q-42.6,45.6-85.17,91.25c-2.84,3.06-4.64,3.7-8.43,1-45.2-32.41-95.63-44.49-149.94-33.44C100.78,151,50.65,198.4,27.45,273.83A158,158,0,0,0,21.12,337c-.42,7,.79,13.83,2,20.68,6.21,35.92,20.87,68,45.24,95.08,45.5,50.65,102.69,72.59,170,64.67,57.81-6.79,103.33-35.8,136.44-83.68,19.83-28.68,30.43-60.8,32.77-95.54,1-15.46.56-30.93-2.76-46.17-.47-2.93-.79-5.89-1.43-8.78a190.19,190.19,0,0,0-32.8-72.32c-1.46-2-2.63-3.81-.69-6.1.84-.78,1.76-1.5,2.53-2.34q31.19-34,62.34-68.12c11.44-12.52,22.79-25.12,34.18-37.69,1.81,1.55,1.21,3.69,1.23,5.59.09,7.32-.26,14.65.1,22,.45,9.28-.51,18.58.71,27.83-.7,13.57,6.45,22.9,19.21,24.54a51,51,0,0,0,18.3-1.07c11.61-2.77,18.4-15,16.61-23.38C525.28,150.31,525.59,148.5,525.57,146.69ZM235,449.72C169.18,460.83,105.36,417.62,91,352.3c-.25-1.13-.63-2.22-1-3.34-2.83-14.89-2.21-29.85-1-44.83,2.11-2.59,2-5.9,2.69-8.89a126.07,126.07,0,0,1,112-95.49c64.92-5.33,123.18,39.46,134.39,103.3A126.11,126.11,0,0,1,235,449.72Z">
+                            </path>
+                        </svg>
+                    </label>
+                </div>
+                <input type="number" name="age" min="18" value="18" />
+            </div>
+            <div class="field image">
+                <img/>
+                <input type="file" name="image" accept="image/png, image/jpeg" />
+            </div>
+            <div class="field">
+                <div class="minAge">
+                    <p> Min Age: <span>   18</span></p>
+                    <input class="slider" type="range" min="18" max="100" value="18" name="minAge" />
+                </div>
+                <div class="maxAge">
+                    <p> Max Age:<span>   18</span></p>
+                    <input class="slider" type="range" min="18" max="100" value="18" name="maxAge" />
+                </div>
+            </div>
+            <div class="buttons-container">
+                <div class="buttons">
+                    <button class="back" type="button">  back</button>
+                    <button class="next" type="button">  next</button>
+                </div>
+            <button type="submit" disabled="true">  submit</button>
+        </div>
+        </form>
+        <a href="/signup">  Already have an account?<span>   Login</span> here</a>
+    </main>
+</body>
+</html>

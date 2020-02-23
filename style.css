@@ -1,0 +1,323 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    --main-color: white;
+    --main-gradientColor: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+    --highlight-color: rgba(0,0,0,.2);
+    --orange: #feac5e;
+    --purp: #c779d0;
+    --blue: #4bc0c8;
+    --main-fontColor: black;
+    --red: #FF5252;
+    --green: #7EF482;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+a{
+    text-decoration: none;
+    color: var(--main-fontColor);
+}
+li{
+    list-style: none;
+}
+input,
+button{
+    outline: none;
+}
+button{
+    text-transform: uppercase;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    opacity: .5;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+
+
+body{
+    background: var(--main-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+main{
+    margin-top: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h2{
+    background: var(--main-gradientColor);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+}
+form{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 250px;
+}
+a{
+    align-self: flex-end;
+    font-size: .8rem;
+}
+a span{
+    color: var(--purp);
+}
+input[type="file"], input[type="range"]{
+    border: none;
+}
+input[type="radio"]{
+    display: none;
+}
+
+form svg{
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+}
+form input{
+    border: none;
+    padding: 8px 10px;
+    width: 100%;
+    margin-bottom: 30px;
+    border-bottom: var(--highlight-color) solid 1px;
+}
+
+form .gender{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+form .gender label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: .1;
+    border: 2px solid var(--purp);
+    color: var(--purp);
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all .5s;
+}
+form .gender label > svg path{
+    fill: var(--purp);
+}
+
+form .gender input[type="radio"]:checked+label{
+    opacity: 1;
+}
+form .gender label:hover{
+    opacity: .4;
+
+}
+
+form button{
+    width: 100%;
+    background: var(--main-gradientColor);
+    color: var(--main-color);
+}
+
+p.error{
+    color: red;
+    margin: 10px 0;
+    font-size: 0.8rem;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    grid-row: 1;
+    grid-column: 1;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(50%,0);
+    transition: all .5s;
+}
+.field.visible{
+    opacity: 1;
+    pointer-events: initial;
+    transform: translate(0,0);
+}
+.field.visible.done{
+    opacity: 0;
+    transform: translate(-50%,0);
+}
+
+.field.image input{
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.field.image img{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.buttons-container{
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+}
+
+.buttons-container .buttons{
+    display: flex;
+}
+
+.buttons-container button{
+    background: var(--main-color);
+}
+.buttons-container > button:first-of-type{
+    margin-top: 10px;
+    position: relative;
+}
+.buttons-container > button:first-of-type:disabled::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.buttons-container .buttons button:disabled{
+    opacity: .3;
+}
+.buttons-container .buttons button:last-of-type,
+.buttons-container > button:first-of-type{
+    background: var(--main-gradientColor);
+}
+.buttons-container .buttons button:first-of-type{
+    display: flex;
+    align-items: center;
+    background-clip: padding-box; 
+    border: solid 5px transparent; 
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    color: black;
+}
+
+.buttons-container .buttons button:first-of-type::before{
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -5px;
+    border-radius: inherit; 
+    background: var(--main-gradientColor);
+}
+
+.minAge,
+.maxAge{
+    width: 100%;
+}
+.minAge p,
+.maxAge p{
+    color: var(--purp);
+    font-weight: bold;  
+    margin: 10px 0;
+}
+.minAge p span,
+.maxAge p span{
+    color: black;
+    font-weight: normal;  
+}
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: var(--purp);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: var(--purp);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 550px) {
+    form {
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-height: 1000px) {
+    main {
+        margin-top: 25vh;
+    }
+}
+
+.progress{
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 50vw;
+}
+.progress svg{
+    width: 50px;
+    opacity: .4;
+    transition: all 1s;
+}
+.progress svg.done{
+    opacity: 1;
+}
+.progress .step{
+    text-align: center;
+}
+.progress .step p{
+    font-size: .8rem;
+    opacity: .4;
+    margin: 15px 0;
+    transition: all 1s;
+    color: var(--purp);
+    font-weight: bold;
+}
+.progress .step p.done{
+    opacity: 1;
+}
+.progress svg path{
+    fill: var(--purp);
+}
